@@ -7,32 +7,27 @@ Original file is located at
     https://colab.research.google.com/drive/1dzrfwx8MYPpmUhaI6iTvdN4B7Zt1JB8r
 """
 
+
 import pandas as pd
 
-url = "https://raw.githubusercontent.com/mledoze/countries/refs/heads/master/countries.json"
+def nettoyage_donnes(url) : 
 
-df = pd.read_json(url)
+    url = "https://raw.githubusercontent.com/mledoze/countries/refs/heads/master/countries.json"
+    
+    df = pd.read_json(url)
+    
+    df = df[["name", "currencies", "capital", "region", "languages"]] # on garde que les 5 colonnes qui nous intéressent pour notre quizz
+    
+    # on veut récupérer pour la colonne "name" le nom commun
+    
+    df["name"] = df["name"].apply(lambda x: x["common"])
+    
+    # on veut mtn récupérer le nom de chaque monnaies
+    
+    df["currencies"] = df["currencies"].apply(lambda x : list(x.values())[0]["name"]if x else None) # pour récupérer le nom des monnaies qui ont chacune de clés différentes, je récupère les valeurs que je transforme en liste j'accède au premier élément de la liste et je récupère la valeur de la clé "name"
+    
+    df["languages"] = df["languages"].apply(lambda x : list(x.values())[0] if x else None)
+    
+    df["capital"] = df["capital"].apply(lambda x : list(x)[0] if x else None)
 
-df.head()
-
-df.columns
-
-df = df[["name", "currencies", "capital", "region", "languages"]] # on garde que les 5 colonnes qui nous intéressent pour notre quizz
-df
-
-# on veut récupérer pour la colonne "name" le nom commun
-
-df["name"] = df["name"].apply(lambda x: x["common"])
-
-# on veut mtn récupérer le nom de chaque monnaies
-
-df["currencies"] = df["currencies"].apply(lambda x : list(x.values())[0]["name"]if x else None) # pour récupérer le nom des monnaies qui ont chacune de clés différentes, je récupère les valeurs que je transforme en liste j'accède au premier élément de la liste et je récupère la valeur de la clé "name"
-df
-
-df["languages"] = df["languages"].apply(lambda x : list(x.values())[0] if x else None)
-df
-
-df["capital"] = df["capital"].apply(lambda x : list(x)[0] if x else None)
-df
-
-df.isna().sum() # on regarde la présence de valeurs manquantes dans le dataframe
+return df
