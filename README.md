@@ -57,7 +57,6 @@ Ou, avec un fichier `requirements.txt` à la racine du projet :
 
 ```
 pandas
-pytest
 ```
 
 ```bash
@@ -67,8 +66,8 @@ pip install -r requirements.txt
 ### Récupérer le projet
 
 ```bash
-git clone https://github.com/<ton-pseudo>/<nom-du-depot>.git
-cd <nom-du-depot>
+git clone https://github.com/Lynazenou/geoquizz.git
+cd geoquizz
 ```
 
 ## ▶️ Lancer le jeu
@@ -140,14 +139,6 @@ La fonction `nettoyage_donnees()` :
 - `charger_scores()` : lit `scores.csv` s'il existe, sinon crée un tableau vide.
 - `ajouter_score(df, nom, score)` : ajoute un joueur, trie du meilleur au plus faible et sauvegarde dans `scores.csv`.
 - `afficher_scores(df)` : affiche le top 10 avec le classement. Les joueurs à égalité ont le même rang.
-
-## 🧪 Tests
-
-```bash
-pytest
-```
-
-> Les tests sont à placer dans un dossier `tests/` (par exemple `tests/test_scores.py`).
 
 ## 🛠️ Technologies
 
