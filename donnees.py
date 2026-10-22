@@ -30,4 +30,4 @@ def nettoyage_donnes(url) :
     
     df["capital"] = df["capital"].apply(lambda x : list(x)[0] if x else None)
 
-return df
+    return df
