@@ -156,4 +156,4 @@ pytest
 
 ## 👤 Auteur
 
-Projet réalisé par **<Lyna>** & **<Antonio>** dans le cadre de ma formation.
+Projet réalisé par Lyna & Antonio dans le cadre de ma formation.
