@@ -45,12 +45,11 @@ Les questions et les réponses sont tirées au hasard à partir d'un dataset ré
 | Bibliothèque | Utilité |
 |---|---|
 | `pandas` | Chargement et nettoyage du dataset, gestion du tableau des scores |
-| `pytest` | Exécution des tests (uniquement pour le développement) |
 
 Les modules `random` et `pathlib` font partie de la bibliothèque standard de Python : il n'y a rien à installer pour eux.
 
 ```bash
-pip install pandas pytest
+pip install pandas
 ```
 
 Ou, avec un fichier `requirements.txt` à la racine du projet :
