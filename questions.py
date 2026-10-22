@@ -1,0 +1,295 @@
+    # Quelle langue parle t'on dans ce pays ?
+
+import random
+
+
+def q_langue():
+        global total, vies
+        i = random.randint(0, len(df) - 1)
+
+        pays = df.iloc[i]["name"]
+        bonne_reponse = df.iloc[i]["languages"]
+
+        # On récupère les langues disponibles, sans les doublons ni les valeurs vides
+        langues = df["languages"].dropna().unique().tolist()
+
+        # On retire la bonne réponse des mauvaises propositions
+        mauvaises_reponses = [
+                langue for langue in langues
+                if langue != bonne_reponse
+        ]
+
+        # On sélectionne 3 mauvaises réponses différentes
+        propositions = random.sample(mauvaises_reponses, 3)
+
+        # On ajoute la bonne réponse
+        propositions.append(bonne_reponse)
+
+        # On mélange les 4 propositions
+        random.shuffle(propositions)
+
+        # On affiche le quiz
+        print(f"Quelle langue parle-t-on dans ce pays : {pays} ?\n")
+
+        for numero, langue in enumerate(propositions, start=1):
+                print(f"{numero}. {langue}")
+
+        # On conserve la bonne réponse pour vérifier le choix du joueur
+        bonne_reponse_quiz = propositions.index(bonne_reponse) + 1
+        try :
+                reponse_joueur = int(input("Entrez le numéro de votre réponse : "))
+
+                if reponse_joueur == bonne_reponse_quiz:
+                        total += 100
+                        print(f"Bravo, tu as {total} points")
+                else :
+                        vies -= 1
+                        total += 0
+                        print(f"\nFaux la bonne réponse est : {bonne_reponse}")
+        except ValueError :
+                reponse_joueur = int(input("Donnez une réponse comprise entre 1 et 4 : "))
+
+                if reponse_joueur == bonne_reponse_quiz:
+                        total += 100
+                        print(f"Bravo, tu as {total} points")
+                else :
+                        vies -= 1
+                        total += 0
+                        print(f"\nFaux la bonne réponse est : {bonne_reponse}")
+
+        return f"Nombre vies restantes : {vies}, Total : {total}"
+
+# Dans quel continent se trouve ce pays ?
+
+def q_continent():
+        global total, vies
+        i = random.randint(0, len(df) - 1)
+
+        pays = df.iloc[i]["name"]
+        bonne_reponse = df.iloc[i]["region"]
+
+        # On récupère les regions disponibles, sans les doublons ni les valeurs vides
+        regions = df["region"].dropna().unique().tolist()
+
+        # On retire la bonne réponse des mauvaises propositions
+        mauvaises_reponses = [
+                region for region in regions
+                if region != bonne_reponse
+        ]
+
+        # On sélectionne 3 mauvaises réponses différentes
+        propositions = random.sample(mauvaises_reponses, 3)
+
+        # On ajoute la bonne réponse
+        propositions.append(bonne_reponse)
+
+        # On mélange les 4 propositions
+        random.shuffle(propositions)
+
+        # On affiche le quiz
+        print(f"Dans quel continent se trouve ce pays : {pays} ?\n")
+
+        for numero, region in enumerate(propositions, start=1):
+                print(f"{numero}. {region}")
+
+        # On conserve la bonne réponse pour vérifier le choix du joueur
+        bonne_reponse_quiz = propositions.index(bonne_reponse) + 1
+        try :
+                reponse_joueur = int(input("Entrez le numéro de votre réponse : "))
+
+                if reponse_joueur == bonne_reponse_quiz:
+                        total += 100
+                        print(f"Bravo, tu as {total} points")
+                else :
+                        vies -= 1
+                        total += 0
+                        print(f"\nFaux la bonne réponse est : {bonne_reponse}")
+        except ValueError :
+                reponse_joueur = int(input("Donnez une réponse comprise entre 1 et 4 : "))
+
+                if reponse_joueur == bonne_reponse_quiz:
+                        total += 100
+                        print(f"Bravo, tu as {total} points")
+                else :
+                        vies -= 1
+                        total += 0
+                        print(f"\nFaux la bonne réponse est : {bonne_reponse}")
+
+        return f"Nombre vies restantes : {vies}, Total : {total}"
+
+
+#Quelle est la monnaie utilisée dans ce pays ?
+
+def q_monnaie():
+        global total, vies
+        i = random.randint(0, len(df) - 1)
+
+        pays = df.iloc[i]["name"]
+        bonne_reponse = df.iloc[i]["currencies"]
+
+        # On récupère les monnaies disponibles, sans les doublons ni les valeurs vides
+        monnaies = df["currencies"].dropna().unique().tolist()
+
+        # On retire la bonne réponse des mauvaises propositions
+        mauvaises_reponses = [
+                monnaie for monnaie in monnaies
+                if monnaie != bonne_reponse
+        ]
+
+        # On sélectionne 3 mauvaises réponses différentes
+        propositions = random.sample(mauvaises_reponses, 3)
+
+        # On ajoute la bonne réponse
+        propositions.append(bonne_reponse)
+
+        # On mélange les 4 propositions
+        random.shuffle(propositions)
+
+        # On affiche le quiz
+        print(f"Quelle est la monnaie utilisée dans ce pays : {pays} ?\n")
+
+        for numero, monnaie in enumerate(propositions, start=1):
+                print(f"{numero}. {monnaie}")
+
+        # On conserve la bonne réponse pour vérifier le choix du joueur
+        bonne_reponse_quiz = propositions.index(bonne_reponse) + 1
+        try :
+                reponse_joueur = int(input("Entrez le numéro de votre réponse : "))
+
+                if reponse_joueur == bonne_reponse_quiz:
+                        total += 100
+                        print(f"Bravo, tu as {total} points")
+                else :
+                        vies -= 1
+                        total += 0
+                        print(f"\nFaux la bonne réponse est : {bonne_reponse}")
+        except ValueError :
+                reponse_joueur = int(input("Donnez une réponse comprise entre 1 et 4 : "))
+
+                if reponse_joueur == bonne_reponse_quiz:
+                        total += 100
+                        print(f"Bravo, tu as {total} points")
+                else :
+                        vies -= 1
+                        total += 0
+                        print(f"\nFaux la bonne réponse est : {bonne_reponse}")
+
+        return f"Nombre vies restantes : {vies}, Total : {total}"
+
+# A Quel Pays correspond cette capitale : ?
+
+def q_pays_capitale():
+        global total, vies
+        i = random.randint(0, len(df) - 1)
+
+        capitale = df.iloc[i]["capital"]
+        bonne_reponse = df.iloc[i]["name"]
+
+        # On récupère les langues disponibles, sans les doublons ni les valeurs vides
+        liste_pays = df["name"].dropna().unique().tolist()
+
+        # On retire la bonne réponse des mauvaises propositions
+        mauvaises_reponses = [
+                pays for pays in liste_pays
+                if pays != bonne_reponse
+        ]
+
+        # On sélectionne 3 mauvaises réponses différentes
+        propositions = random.sample(mauvaises_reponses, 3)
+
+        # On ajoute la bonne réponse
+        propositions.append(bonne_reponse)
+
+        # On mélange les 4 propositions
+        random.shuffle(propositions)
+
+        # On affiche le quiz
+        print(f"A Quel Pays correspond cette capitale : {capitale} ?\n")
+
+        for numero, pays in enumerate(propositions, start=1):
+                print(f"{numero}. {pays}")
+
+        # On conserve la bonne réponse pour vérifier le choix du joueur
+        bonne_reponse_quiz = propositions.index(bonne_reponse) + 1
+        try :
+                reponse_joueur = int(input("Entrez le numéro de votre réponse : "))
+
+                if reponse_joueur == bonne_reponse_quiz:
+                        total += 100
+                        print(f"Bravo, tu as {total} points")
+                else :
+                        vies -= 1
+                        total += 0
+                        print(f"\nFaux la bonne réponse est : {bonne_reponse}")
+        except ValueError :
+                reponse_joueur = int(input("Donnez une réponse comprise entre 1 et 4 : "))
+
+                if reponse_joueur == bonne_reponse_quiz:
+                        total += 100
+                        print(f"Bravo, tu as {total} points")
+                else :
+                        vies -= 1
+                        total += 0
+                        print(f"\nFaux la bonne réponse est : {bonne_reponse}")
+
+        return f"Nombre vies restantes : {vies}, Total : {total}"
+
+# Quelle est la capitale dans ce pays ?
+
+def q_capitale():
+        global total, vies
+        i = random.randint(0, len(df) - 1)
+
+        pays = df.iloc[i]["name"]
+        bonne_reponse = df.iloc[i]["capital"]
+
+        # On récupère les langues disponibles, sans les doublons ni les valeurs vides
+        capitales = df["capital"].dropna().unique().tolist()
+
+        # On retire la bonne réponse des mauvaises propositions
+        mauvaises_reponses = [
+                capitale for capitale in capitales
+                if capitale != bonne_reponse
+        ]
+
+        # On sélectionne 3 mauvaises réponses différentes
+        propositions = random.sample(mauvaises_reponses, 3)
+
+        # On ajoute la bonne réponse
+        propositions.append(bonne_reponse)
+
+        # On mélange les 4 propositions
+        random.shuffle(propositions)
+
+        # On affiche le quiz
+        print(f"Quelle est la capitale dans ce pays : {pays} ?\n")
+
+        for numero, capitale in enumerate(propositions, start=1):
+                print(f"{numero}. {capitale}")
+
+        # On conserve la bonne réponse pour vérifier le choix du joueur
+        bonne_reponse_quiz = propositions.index(bonne_reponse) + 1
+        try :
+                reponse_joueur = int(input("Entrez le numéro de votre réponse : "))
+
+                if reponse_joueur == bonne_reponse_quiz:
+                        total += 100
+                        print(f"Bravo, tu as {total} points")
+                else :
+                        vies -= 1
+                        total += 0
+                        print(f"\nFaux la bonne réponse est : {bonne_reponse}")
+        except ValueError :
+                reponse_joueur = int(input("Donnez une réponse comprise entre 1 et 4 : "))
+
+                if reponse_joueur == bonne_reponse_quiz:
+                        total += 100
+                        print(f"Bravo, tu as {total} points")
+                else :
+                        vies -= 1
+                        total += 0
+                        print(f"\nFaux la bonne réponse est : {bonne_reponse}")
+
+        return f"Nombre vies restantes : {vies}, Total : {total}"
+
+liste_question = [q_capitale,q_pays_capitale,q_monnaie,q_continent,q_langue]
