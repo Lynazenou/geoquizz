@@ -10,7 +10,7 @@ Original file is located at
 
 import pandas as pd
 
-def nettoyage_donnes(url) : 
+def nettoyage_donnees(url) : 
 
     url = "https://raw.githubusercontent.com/mledoze/countries/refs/heads/master/countries.json"
     
