@@ -1,43 +1,40 @@
 import pandas as pd
+from pathlib import Path
 
-# Création d'un dictionnaire contenant les noms et les scores des joueurs
-data_score = {
-    "Nom": ["Lyna", "Antonio"],                                 # Liste des noms des joueurs
-    "Score": [0, 1337]                                          # Liste des scores associés à chaque joueur
-}
+# Le CSV est placé à côté du fichier scores.py, quel que soit le dossier d'où tu lances le jeu
+fichier_scores = Path(__file__).parent / "scores.csv"
 
-# Convertit le dictionnaire en DataFrame Pandas
-df_score = pd.DataFrame(data_score)                             
 
-# Crée une fonction pour ajouter un joueur et son score
-def ajouter_score(df, nom, score):                              
-    # Création d'un DataFrame contenant le nouveau joueur
-    nouveau_score = pd.DataFrame({
-        "Nom": [nom],                                           # Ajoute le nom du nouveau joueur
-        "Score": [score]                                        # Ajoute le score du nouveau joueur
-    })
+def charger_scores():
+    if fichier_scores.exists():
+        return pd.read_csv(fichier_scores)
 
-    # Ajoute le nouveau joueur et réinitialise temporairement l'index de 0 à n-1
-    df = pd.concat([df, nouveau_score])      
+    return pd.DataFrame({"Nom": [], "Score": []})
 
-    # Attribution du rang : les joueurs à égalité ont le même rang
-    df["Classement"] = df["Score"].rank(
-        ascending=False,
-        method="min"
-    ).astype(int)
 
-    # Trie les joueurs du score le plus élevé au plus faible
-    df = df.sort_values("Score", ascending=False)               
+def ajouter_score(df, nom, score):
+    nouveau_score = pd.DataFrame({"Nom": [nom], "Score": [score]})
 
-    # Utilisation du classement comme index
-    df = df.set_index("Classement")
+    # ignore_index=True renumérote proprement les lignes de 0 à n-1
+    df = pd.concat([df, nouveau_score], ignore_index=True)
+    df["Score"] = df["Score"].astype(int)
+
+    # Tri du meilleur score au plus faible
+    df = df.sort_values("Score", ascending=False).reset_index(drop=True)
+
+    # Sauvegarde dans le fichier CSV
+    df.to_csv(fichier_scores, index=False)
 
     return df
 
 
-def afficher_scores():
-    return f"Voici le tableau des scores !\n\n{df_score.head(10)}"
+def afficher_scores(df):
+    if df.empty:
+        return "Aucun score pour le moment."
 
-df_score = ajouter_score(df_score,"Dylan",800)
-df_score = ajouter_score(df_score,"François",800)
-df_score = ajouter_score(df_score,"Paul",69)
+    top = df.head(10).copy()
+
+    # Le classement est calculé à l'affichage : les égalités ont le même rang
+    top.insert(0, "Classement", top["Score"].rank(ascending=False, method="min").astype(int))
+
+    return f"Voici le tableau des scores !\n\n{top.to_string(index=False)}"
