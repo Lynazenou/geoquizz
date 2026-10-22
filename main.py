@@ -6,8 +6,6 @@
 
 continuer = True  # Initialise une variable à True pour permettre au menu de s'exécuter
 
-continuer = True  # Initialise une variable à True pour permettre au menu de s'exécuter
-
 while continuer:  # Répète le menu tant que la variable continuer vaut True
 
     # Affiche du menu et des options
