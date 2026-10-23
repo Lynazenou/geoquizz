@@ -146,4 +146,4 @@ La fonction `nettoyage_donnees()` :
 
 ## 👤 Auteur
 
-Projet réalisé par Lyna & Antonio dans le cadre de ma formation.
+Projet réalisé par Lyna & Antonio dans le cadre de notre formation.
