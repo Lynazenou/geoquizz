@@ -30,7 +30,7 @@ def q_langue(vies, total):
         random.shuffle(propositions)
 
         # On affiche le quiz
-        print(f"Quelle langue parle-t-on dans ce pays : {pays} ?\n")
+        print(f"⚪ Quelle langue parle-t-on dans ce pays : {pays} ?\n")
 
         for numero, langue in enumerate(propositions, start=1):
                 print(f"{numero}. {langue}")
@@ -84,7 +84,7 @@ def q_capitale(vies, total):
         random.shuffle(propositions)
 
         # On affiche le quiz
-        print(f"Quelle est la capitale dans ce pays : {pays} ?\n")
+        print(f"⚪ Quelle est la capitale dans ce pays : {pays} ?\n")
 
         for numero, capitale in enumerate(propositions, start=1):
                 print(f"{numero}. {capitale}")
@@ -137,7 +137,7 @@ def q_pays_capitale(vies, total):
         random.shuffle(propositions)
 
         # On affiche le quiz
-        print(f"A Quel Pays correspond cette capitale : {capitale} ?\n")
+        print(f"⚪ A Quel Pays correspond cette capitale : {capitale} ?\n")
 
         for numero, pays in enumerate(propositions, start=1):
                 print(f"{numero}. {pays}")
@@ -191,7 +191,7 @@ def q_continent(vies, total):
         random.shuffle(propositions)
 
         # On affiche le quiz
-        print(f"Dans quel continent se trouve ce pays : {pays} ?\n")
+        print(f"⚪ Dans quel continent se trouve ce pays : {pays} ?\n")
 
         for numero, region in enumerate(propositions, start=1):
                 print(f"{numero}. {region}")
@@ -245,7 +245,7 @@ def q_monnaie(vies, total):
         random.shuffle(propositions)
 
         # On affiche le quiz
-        print(f"Quelle est la monnaie utilisée dans ce pays : {pays} ?\n")
+        print(f"⚪ Quelle est la monnaie utilisée dans ce pays : {pays} ?\n")
 
         for numero, monnaie in enumerate(propositions, start=1):
                 print(f"{numero}. {monnaie}")
