@@ -9,8 +9,8 @@ while continuer:  # Répète le menu tant que la variable continuer vaut True
 
     # Affiche du menu et des options
     print("\n 🌏 Bienvenue dans GéoQUIZZZ 👋")  
-    print("\n1. Nouvelle partie🧠")
-    print("2. Tableau des scores🎯")
+    print("\n1. Nouvelle partie 🧠")
+    print("2. Tableau des scores 🎯")
     print("3. Quitter 🚀\n")
 
     # Demande un choix et convertit la réponse en entier
