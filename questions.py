@@ -39,17 +39,17 @@ def q_langue(vies, total):
         bonne_reponse_quiz = propositions.index(bonne_reponse) + 1
         
         # On redemande tant que la saisie n'est pas 1, 2, 3 ou 4
-        reponse_joueur = input("Entrez le numéro de votre réponse (1 à 4) : ").strip()
+        reponse_joueur = input("\nEntrez le numéro de votre réponse (1 à 4) : ").strip()
 
         while reponse_joueur not in ["1", "2", "3", "4"]:
-                reponse_joueur = input("Donne une réponse comprise entre 1 et 4 : ").strip()
+                reponse_joueur = input("\nDonne une réponse comprise entre 1 et 4 : ").strip()
 
         reponse_joueur = int(reponse_joueur)
 
         # On vérifie la réponse
         if reponse_joueur == bonne_reponse_quiz:
                 total += 100
-                print(f"Bravo, tu as {total} points")
+                print(f"\nBravo, tu as {total} points")
         else :
                 vies -= 1
                 print(f"\nFaux la bonne réponse est : {bonne_reponse}")
@@ -93,17 +93,17 @@ def q_capitale(vies, total):
         bonne_reponse_quiz = propositions.index(bonne_reponse) + 1
 
         # On redemande tant que la saisie n'est pas 1, 2, 3 ou 4
-        reponse_joueur = input("Entrez le numéro de votre réponse (1 à 4) : ").strip()
+        reponse_joueur = input("\nEntrez le numéro de votre réponse (1 à 4) : ").strip()
 
         while reponse_joueur not in ["1", "2", "3", "4"]:
-                reponse_joueur = input("Donne une réponse comprise entre 1 et 4 : ").strip()
+                reponse_joueur = input("\nDonne une réponse comprise entre 1 et 4 : ").strip()
 
         reponse_joueur = int(reponse_joueur)
 
         # On vérifie la réponse
         if reponse_joueur == bonne_reponse_quiz:
                 total += 100
-                print(f"Bravo, tu as {total} points")
+                print(f"\nBravo, tu as {total} points")
         else :
                 vies -= 1
                 print(f"\nFaux la bonne réponse est : {bonne_reponse}")
@@ -146,17 +146,17 @@ def q_pays_capitale(vies, total):
         bonne_reponse_quiz = propositions.index(bonne_reponse) + 1
 
         # On redemande tant que la saisie n'est pas 1, 2, 3 ou 4
-        reponse_joueur = input("Entrez le numéro de votre réponse (1 à 4) : ").strip()
+        reponse_joueur = input("\nEntrez le numéro de votre réponse (1 à 4) : ").strip()
 
         while reponse_joueur not in ["1", "2", "3", "4"]:
-                reponse_joueur = input("Donne une réponse comprise entre 1 et 4 : ").strip()
+                reponse_joueur = input("\nDonne une réponse comprise entre 1 et 4 : ").strip()
 
         reponse_joueur = int(reponse_joueur)
 
         # On vérifie la réponse
         if reponse_joueur == bonne_reponse_quiz:
                 total += 100
-                print(f"Bravo, tu as {total} points")
+                print(f"\nBravo, tu as {total} points")
         else :
                 vies -= 1
                 print(f"\nFaux la bonne réponse est : {bonne_reponse}")
@@ -200,17 +200,17 @@ def q_continent(vies, total):
         bonne_reponse_quiz = propositions.index(bonne_reponse) + 1
 
         # On redemande tant que la saisie n'est pas 1, 2, 3 ou 4
-        reponse_joueur = input("Entrez le numéro de votre réponse (1 à 4) : ").strip()
+        reponse_joueur = input("\nEntrez le numéro de votre réponse (1 à 4) : ").strip()
 
         while reponse_joueur not in ["1", "2", "3", "4"]:
-                reponse_joueur = input("Donne une réponse comprise entre 1 et 4 : ").strip()
+                reponse_joueur = input("\nDonne une réponse comprise entre 1 et 4 : ").strip()
 
         reponse_joueur = int(reponse_joueur)
 
         # On vérifie la réponse
         if reponse_joueur == bonne_reponse_quiz:
                 total += 100
-                print(f"Bravo, tu as {total} points")
+                print(f"\nBravo, tu as {total} points")
         else :
                 vies -= 1
                 print(f"\nFaux la bonne réponse est : {bonne_reponse}")
@@ -254,17 +254,17 @@ def q_monnaie(vies, total):
         bonne_reponse_quiz = propositions.index(bonne_reponse) + 1
 
         # On redemande tant que la saisie n'est pas 1, 2, 3 ou 4
-        reponse_joueur = input("Entrez le numéro de votre réponse (1 à 4) : ").strip()
+        reponse_joueur = input("\nEntrez le numéro de votre réponse (1 à 4) : ").strip()
 
         while reponse_joueur not in ["1", "2", "3", "4"]:
-                reponse_joueur = input("Donne une réponse comprise entre 1 et 4 : ").strip()
+                reponse_joueur = input("\nDonne une réponse comprise entre 1 et 4 : ").strip()
 
         reponse_joueur = int(reponse_joueur)
 
         # On vérifie la réponse
         if reponse_joueur == bonne_reponse_quiz:
                 total += 100
-                print(f"Bravo, tu as {total} points")
+                print(f"\nBravo, tu as {total} points")
         else :
                 vies -= 1
                 print(f"\nFaux la bonne réponse est : {bonne_reponse}")
