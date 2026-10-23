@@ -33,12 +33,9 @@ while continuer:  # Répète le menu tant que la variable continuer vaut True
     # Permet au joueur de quitter le jeu
     elif choix == "3":
         continuer = False  # Met fin à la boucle while
-        print("À bientôt sur GéoQUIZZZ !!!")
+        print("n\À bientôt sur GéoQUIZZZ !!!")
 
     # Gestion des erreurs d'entrées de l'utilisateur
     else:  
-        print("Choix invalide, tu dois répondre 1, 2 ou 3")
+        print("\nChoix invalide, tu dois répondre 1, 2 ou 3")
 
-    # Gestion des erreurs d'entrées de l'utilisateur
-    else:  
-        print("Choix invalide, tu dois répondre 1, 2 ou 3")
