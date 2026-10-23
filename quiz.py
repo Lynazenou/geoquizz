@@ -8,10 +8,10 @@ def quiz():
     vies = 3
     total = 0
     NbQuestions = 10
-    nom = str(input("Pour commencer donne-moi ton prénom : "))
+    nom = str(input("\nPour commencer donne-moi ton prénom : "))
 
-    print("Tu as 3 vies et tu vas répondre à 10 questions.")
-    print("Chaque bonne réponse rapporte 100 points.")
+    print("\nTu as 3 vies et tu vas répondre à 10 questions.")
+    print("Chaque bonne réponse rapporte 100 points.\n")
 
     while vies > 0 and NbQuestions > 0:
         question = random.choice(questions.liste_question)
@@ -21,7 +21,7 @@ def quiz():
 
         print(f"\nVies restantes : {vies}")
         print(f"Questions restantes : {NbQuestions}")
-        print(f"Score : {total}")
+        print(f"Score : {total}\n")
 
     if vies == 0:
         print("\nTu as perdu toutes tes vies !\n")
